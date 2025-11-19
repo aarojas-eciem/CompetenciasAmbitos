@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red de Competencias - Ámbito 1: Educación Parvularia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #082959;
+            margin-bottom: 15px;
+            font-size: 2.2em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7DC6E2;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .network-section {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 4px 20px rgba(8,41,89,0.1);
+        }
+        
+        svg {
+            width: 100%;
+            height: auto;
+        }
+        
+        .node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .node:hover {
+            filter: brightness(1.08);
+        }
+        
+        .node-circle {
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.12));
+        }
+        
+        .node-text {
+            font-size: 10.5px;
+            font-weight: 500;
+            text-anchor: middle;
+            pointer-events: none;
+            font-family: Verdana, sans-serif;
+        }
+        
+        .connection {
+            stroke-width: 2;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        .node:hover ~ .connection,
+        .connection:hover {
+            opacity: 0.9;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 45px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        
+        .legend-text {
+            font-size: 13px;
+            color: #082959;
+            font-weight: 500;
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Red de Competencias del Sector de Cuidados</h1>
+        <p class="subtitle">Ámbito 1: Educación Parvularia y Primera Infancia</p>
+        
+        <div class="network-section">
+            <svg viewBox="0 0 1700 1000" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <!-- Gradientes con paleta ajustada -->
+                    <radialGradient id="grad-ambito" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#15447D;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#082959;stop-opacity:1" />
+                    </radialGradient>
+                    <radialGradient id="grad-perfil" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#B8D9ED;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#9AC8E2;stop-opacity:1" />
+                    </radialGradient>
+                    <radialGradient id="grad-tecnica" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#E8F4FA;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#D1E9F5;stop-opacity:1" />
+                    </radialGradient>
+                    <radialGradient id="grad-transversal" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" style="stop-color:#FFD6E8;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFB3D9;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- CONEXIONES -->
+                <!-- Ámbito → Perfiles -->
+                <line class="connection" x1="100" y1="550" x2="320" y2="350" stroke="#082959" stroke-width="2.5" opacity="0.6"/>
+                <line class="connection" x1="100" y1="550" x2="320" y2="650" stroke="#082959" stroke-width="2.5" opacity="0.6"/>
+                
+                <!-- Perfiles → Técnicas -->
+                <!-- 2342 Educadores (9 competencias) -->
+                <line class="connection" x1="400" y1="350" x2="700" y2="80" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="130" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="180" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="230" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="280" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="330" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="380" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="430" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="350" x2="700" y2="480" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                
+                <!-- 3611 Técnicos (4 competencias) -->
+                <line class="connection" x1="400" y1="650" x2="700" y2="570" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="650" x2="700" y2="620" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="650" x2="700" y2="670" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="400" y1="650" x2="700" y2="720" stroke="#5AADE5" stroke-width="2" opacity="0.5"/>
+                
+                <!-- Técnicas → Transversales (simplificadas) -->
+                <line class="connection" x1="1150" y1="80" x2="1450" y2="200" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="130" x2="1450" y2="300" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="180" x2="1450" y2="400" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="230" x2="1450" y2="500" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="280" x2="1450" y2="500" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="330" x2="1450" y2="600" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="330" x2="1450" y2="880" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="380" x2="1450" y2="300" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="430" x2="1450" y2="700" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="480" x2="1450" y2="700" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="570" x2="1450" y2="700" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="620" x2="1450" y2="600" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="670" x2="1450" y2="400" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                <line class="connection" x1="1150" y1="720" x2="1450" y2="800" stroke="#FF69B4" stroke-width="2" opacity="0.5"/>
+                
+                <!-- COLUMNA 1: ÁMBITO -->
+                <g class="node">
+                    <circle cx="100" cy="550" r="60" fill="url(#grad-ambito)" stroke="#082959" stroke-width="3" class="node-circle"/>
+                    <text x="100" y="535" class="node-text" fill="white" font-size="11px">Ámbito 1:</text>
+                    <text x="100" y="551" class="node-text" fill="white" font-weight="700" font-size="12px">Educación</text>
+                    <text x="100" y="566" class="node-text" fill="white" font-weight="700" font-size="12px">Parvularia y</text>
+                    <text x="100" y="581" class="node-text" fill="white" font-weight="700" font-size="12px">Primera Infancia</text>
+                </g>
+                
+                <!-- COLUMNA 2: PERFILES -->
+                <g class="node">
+                    <ellipse cx="360" cy="350" rx="85" ry="52" fill="url(#grad-perfil)" stroke="#7DC6E2" stroke-width="2" class="node-circle"/>
+                    <text x="360" y="338" class="node-text" fill="#082959" font-size="10px">2342</text>
+                    <text x="360" y="353" class="node-text" fill="#082959" font-weight="700" font-size="11px">Educadores</text>
+                    <text x="360" y="368" class="node-text" fill="#082959" font-weight="700" font-size="11px">de Párvulos</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="360" cy="650" rx="85" ry="52" fill="url(#grad-perfil)" stroke="#7DC6E2" stroke-width="2" class="node-circle"/>
+                    <text x="360" y="638" class="node-text" fill="#082959" font-size="10px">3611</text>
+                    <text x="360" y="653" class="node-text" fill="#082959" font-weight="700" font-size="11px">Técnicos en</text>
+                    <text x="360" y="668" class="node-text" fill="#082959" font-weight="700" font-size="11px">Ed. Parvularia</text>
+                </g>
+                
+                <!-- COLUMNA 3: COMPETENCIAS TÉCNICAS -->
+                <g class="node">
+                    <rect x="700" y="60" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="77" r="4" fill="#082959"/>
+                    <text x="925" y="82" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Planificación y organización de actividades educativas</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="110" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="127" r="4" fill="#082959"/>
+                    <text x="925" y="132" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Promoción del desarrollo del lenguaje</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="160" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="177" r="4" fill="#082959"/>
+                    <text x="925" y="182" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Facilitación de actividades artísticas y recreativas</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="210" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="227" r="4" fill="#082959"/>
+                    <text x="925" y="232" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Evaluación y seguimiento del desarrollo infantil</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="260" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="277" r="4" fill="#082959"/>
+                    <text x="925" y="282" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Identificación de necesidades de salud y bienestar</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="310" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="327" r="4" fill="#082959"/>
+                    <text x="925" y="332" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Supervisión y prevención de riesgos</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="360" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="377" r="4" fill="#082959"/>
+                    <text x="925" y="382" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Apoyo en desarrollo de hábitos de autocuidado</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="410" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="427" r="4" fill="#082959"/>
+                    <text x="925" y="432" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Comunicación con familias y equipos educativos</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="460" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#5AADE5" stroke-width="1.5"/>
+                    <circle cx="725" cy="477" r="4" fill="#082959"/>
+                    <text x="925" y="482" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Coordinación con redes de apoyo</text>
+                </g>
+                
+                <!-- Técnicas de Técnicos -->
+                <g class="node">
+                    <rect x="700" y="550" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#7DC6E2" stroke-width="1.5"/>
+                    <circle cx="725" cy="567" r="4" fill="#082959"/>
+                    <text x="925" y="572" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Apoyo en actividades educativas</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="600" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#7DC6E2" stroke-width="1.5"/>
+                    <circle cx="725" cy="617" r="4" fill="#082959"/>
+                    <text x="925" y="622" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Apoyo en desarrollo de habilidades infantiles</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="650" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#7DC6E2" stroke-width="1.5"/>
+                    <circle cx="725" cy="667" r="4" fill="#082959"/>
+                    <text x="925" y="672" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Apoyo en actividades artísticas y recreativas</text>
+                </g>
+                
+                <g class="node">
+                    <rect x="700" y="700" width="450" height="35" rx="17" fill="url(#grad-tecnica)" stroke="#7DC6E2" stroke-width="1.5"/>
+                    <circle cx="725" cy="717" r="4" fill="#082959"/>
+                    <text x="925" y="722" class="node-text" fill="#082959" font-size="9.5px" font-weight="600">Mantenimiento de disciplina y rutinas</text>
+                </g>
+                
+                <!-- COLUMNA 4: COMPETENCIAS TRANSVERSALES -->
+                <g class="node">
+                    <ellipse cx="1500" cy="200" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="197" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Planificación y</text>
+                    <text x="1500" y="212" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Organización</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="300" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="297" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Comunicación</text>
+                    <text x="1500" y="312" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Efectiva</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="400" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="397" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Creatividad e</text>
+                    <text x="1500" y="412" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Innovación</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="500" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="493" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Observación y</text>
+                    <text x="1500" y="508" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Atención al Detalle</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="600" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="597" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Apoyo y</text>
+                    <text x="1500" y="612" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Orientación</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="700" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="693" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Trabajo en Equipo</text>
+                    <text x="1500" y="708" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">y Colaboración</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="800" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="793" class="node-text" fill="#C2185B" font-weight="700" font-size="9px">Responsabilidad y</text>
+                    <text x="1500" y="808" class="node-text" fill="#C2185B" font-weight="700" font-size="9px">Ética Profesional</text>
+                </g>
+                
+                <g class="node">
+                    <ellipse cx="1500" cy="880" rx="90" ry="40" fill="url(#grad-transversal)" stroke="#FF69B4" stroke-width="2" class="node-circle"/>
+                    <text x="1500" y="877" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Resolución de</text>
+                    <text x="1500" y="892" class="node-text" fill="#C2185B" font-weight="700" font-size="10px">Problemas</text>
+                </g>
+                
+            </svg>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #15447D, #082959);"></div>
+                    <span class="legend-text">Ámbito</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #B8D9ED, #9AC8E2);"></div>
+                    <span class="legend-text">Perfiles</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #E8F4FA, #D1E9F5);"></div>
+                    <span class="legend-text">Competencias Técnicas</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-circle" style="background: linear-gradient(135deg, #FFD6E8, #FFB3D9);"></div>
+                    <span class="legend-text">Competencias Transversales</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
